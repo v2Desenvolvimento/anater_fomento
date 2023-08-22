@@ -1,5 +1,5 @@
 FROM python:3.11-slim as builder
-LABEL maintainer="Leslier Soares Corrêa <leslier.correa@tellus.tec.br>"
+LABEL maintainer="Leslier Soares Corrêa <soares@v2solucoes.com.br>"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get install -y --no-install-recommends build-essential curl
@@ -28,8 +28,8 @@ ENV PATH=/venv/bin:${PATH}
 WORKDIR /app
 USER nobody
 COPY --chown=nobody:nogroup hypercorn.toml .
-COPY --chown=nobody:nogroup fomento_repeat/ ./login_projeta
+COPY --chown=nobody:nogroup fomento_repeat/ ./fomento_repeat
 
 EXPOSE 5000
 
-CMD ["hypercorn", "--config=hypercorn.toml", "login_projeta.main:app"]
+CMD ["hypercorn", "--config=hypercorn.toml", "fomento_repeat.main:app"]

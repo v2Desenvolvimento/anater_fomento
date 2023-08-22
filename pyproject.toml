@@ -17,6 +17,8 @@ python = "^3.11"
 python-dotenv = "^1.0.0"
 uvloop = "^0.17.0"
 python-multipart = "^0.0.6"
+urllib3 = "^2.0.4"
+certifi = "^2023.7.22"
 
 [tool.poetry.dev-dependencies]
 asgi-lifespan = "^2.1.0"
